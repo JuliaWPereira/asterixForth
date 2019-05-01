@@ -31,6 +31,7 @@ always @(T or shiftCtrl)
 					res[15] = T[15];
 					res[14] = 1'b0;
 				end
+			default: res = T;
 		endcase
 	end
 endmodule	
