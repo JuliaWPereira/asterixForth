@@ -10,3 +10,10 @@ Para informações relativas a ideia da arquitetura, por enquanto leia o pdf do 
   <li> muxY.v - arquivo do multiplexador de seleção de quem deve ser colocado no barramento do Y no qual a ULA tem acesso. Operações estritamente combinacionais.</li>
 </u1>
 </div> 
+
+
+<div>
+  <u1>
+    <li> ULA.v - obsoleto </li>
+  </u1>
+</div>
