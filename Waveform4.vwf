@@ -1,0 +1,4561 @@
+/*<simulation_settings>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off asterixForth -c asterixForth --vector_source="/home/julia/intelFPGA_lite/18.1/asterixForth/Waveform4.vwf" --testbench_file="/home/julia/intelFPGA_lite/18.1/asterixForth/simulation/qsim/Waveform4.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off asterixForth -c asterixForth --vector_source="/home/julia/intelFPGA_lite/18.1/asterixForth/Waveform4.vwf" --testbench_file="/home/julia/intelFPGA_lite/18.1/asterixForth/simulation/qsim/Waveform4.vwf.vt"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="/home/julia/intelFPGA_lite/18.1/asterixForth/simulation/qsim/" asterixForth -c asterixForth</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="/home/julia/intelFPGA_lite/18.1/asterixForth/simulation/qsim/" asterixForth -c asterixForth</tnetlist_cmd>
+<modelsim_script>onerror {exit -code 1}
+vlib work
+vlog -work work asterixForth.vo
+vlog -work work Waveform4.vwf.vt
+vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.muxY_vlg_vec_tst
+vcd file -direction asterixForth.msim.vcd
+vcd add -internal muxY_vlg_vec_tst/*
+vcd add -internal muxY_vlg_vec_tst/i1/*
+proc simTimestamp {} {
+    echo "Simulation time: $::now ps"
+    if { [string equal running [runStatus]] } {
+        after 2500 simTimestamp
+    }
+}
+after 2500 simTimestamp
+run -all
+quit -f
+</modelsim_script>
+<modelsim_script_timing>onerror {exit -code 1}
+vlib work
+vlog -work work asterixForth.vo
+vlog -work work Waveform4.vwf.vt
+vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.muxY_vlg_vec_tst
+vcd file -direction asterixForth.msim.vcd
+vcd add -internal muxY_vlg_vec_tst/*
+vcd add -internal muxY_vlg_vec_tst/i1/*
+proc simTimestamp {} {
+    echo "Simulation time: $::now ps"
+    if { [string equal running [runStatus]] } {
+        after 2500 simTimestamp
+    }
+}
+after 2500 simTimestamp
+run -all
+quit -f
+</modelsim_script_timing>
+<hdl_lang>verilog</hdl_lang>
+</simulation_settings>*/
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+
+HEADER
+{
+	VERSION = 1;
+	TIME_UNIT = ns;
+	DATA_OFFSET = 0.0;
+	DATA_DURATION = 16.0;
+	SIMULATION_TIME = 0.0;
+	GRID_PHASE = 0.0;
+	GRID_PERIOD = 10.0;
+	GRID_DUTY_CYCLE = 50;
+}
+
+SIGNAL("Yout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 16;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("Yout[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("Yout[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("Yout[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("Yout[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("Yout[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("Yout[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("Yout[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("Yout[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("Yout[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("Yout[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("Yout[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("Yout[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("Yout[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("Yout[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("Yout[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("Yout[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Yout";
+}
+
+SIGNAL("selectY")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 3;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("selectY[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "selectY";
+}
+
+SIGNAL("selectY[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "selectY";
+}
+
+SIGNAL("selectY[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "selectY";
+}
+
+SIGNAL("yGBUS")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 16;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("yGBUS[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yGBUS[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yGBUS[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yGBUS[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yGBUS[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yGBUS[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yGBUS[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yGBUS[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yGBUS[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yGBUS[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yGBUS[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yGBUS[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yGBUS[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yGBUS[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yGBUS[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yGBUS[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yGBUS";
+}
+
+SIGNAL("yINDEX")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 16;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("yINDEX[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yINDEX[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yINDEX[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yINDEX[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yINDEX[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yINDEX[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yINDEX[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yINDEX[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yINDEX[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yINDEX[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yINDEX[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yINDEX[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yINDEX[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yINDEX[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yINDEX[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yINDEX[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yINDEX";
+}
+
+SIGNAL("yMD")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 16;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("yMD[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yMD[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yMD[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yMD[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yMD[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yMD[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yMD[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yMD[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yMD[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yMD[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yMD[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yMD[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yMD[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yMD[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yMD[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yMD[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yMD";
+}
+
+SIGNAL("yN")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 16;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("yN[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yN[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yN[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yN[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yN[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yN[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yN[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yN[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yN[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yN[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yN[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yN[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yN[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yN[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yN[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yN[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yN";
+}
+
+SIGNAL("yNC")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 16;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("yNC[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yNC[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yNC[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yNC[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yNC[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yNC[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yNC[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yNC[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yNC[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yNC[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yNC[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yNC[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yNC[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yNC[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yNC[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yNC[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yNC";
+}
+
+SIGNAL("yPC")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 16;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("yPC[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yPC[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yPC[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yPC[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yPC[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yPC[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yPC[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yPC[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yPC[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yPC[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yPC[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yPC[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yPC[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yPC[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yPC[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yPC[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yPC";
+}
+
+SIGNAL("yR")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 16;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("yR[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("yR[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("yR[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("yR[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("yR[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("yR[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("yR[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("yR[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("yR[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("yR[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("yR[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("yR[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("yR[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("yR[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("yR[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("yR[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "yR";
+}
+
+SIGNAL("ySR")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 16;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("ySR[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+SIGNAL("ySR[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+SIGNAL("ySR[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+SIGNAL("ySR[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+SIGNAL("ySR[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+SIGNAL("ySR[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+SIGNAL("ySR[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+SIGNAL("ySR[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+SIGNAL("ySR[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+SIGNAL("ySR[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+SIGNAL("ySR[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+SIGNAL("ySR[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+SIGNAL("ySR[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+SIGNAL("ySR[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+SIGNAL("ySR[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+SIGNAL("ySR[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ySR";
+}
+
+TRANSITION_LIST("Yout[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("Yout[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("Yout[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("Yout[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("Yout[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("Yout[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("Yout[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("Yout[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("Yout[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("Yout[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("Yout[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("Yout[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("Yout[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("Yout[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("Yout[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("Yout[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("selectY[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 8.0;
+			LEVEL 1 FOR 8.0;
+		}
+	}
+}
+
+TRANSITION_LIST("selectY[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 0 FOR 4.0;
+			LEVEL 1 FOR 4.0;
+		}
+	}
+}
+
+TRANSITION_LIST("selectY[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 4;
+			LEVEL 0 FOR 2.0;
+			LEVEL 1 FOR 2.0;
+		}
+	}
+}
+
+TRANSITION_LIST("yGBUS[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yGBUS[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yGBUS[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yGBUS[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yGBUS[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yGBUS[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yGBUS[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yGBUS[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yGBUS[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yGBUS[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yGBUS[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yGBUS[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yGBUS[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yGBUS[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yGBUS[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yGBUS[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yINDEX[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yMD[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yN[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yNC[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yPC[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("yR[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("ySR[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 0;
+	TREE_LEVEL = 0;
+	CHILDREN = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 1;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 2;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 3;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 4;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 5;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 6;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 7;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 8;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 9;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 10;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 11;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 12;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 13;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 14;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 15;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Yout[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 16;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "selectY";
+	EXPAND_STATUS = EXPANDED;
+	RADIX = Binary;
+	TREE_INDEX = 17;
+	TREE_LEVEL = 0;
+	CHILDREN = 18, 19, 20;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "selectY[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 18;
+	TREE_LEVEL = 1;
+	PARENT = 17;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "selectY[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 19;
+	TREE_LEVEL = 1;
+	PARENT = 17;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "selectY[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 20;
+	TREE_LEVEL = 1;
+	PARENT = 17;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 21;
+	TREE_LEVEL = 0;
+	CHILDREN = 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 22;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 23;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 24;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 25;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 26;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 27;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 28;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 29;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 30;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 31;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 32;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 33;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 34;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 35;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 36;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yGBUS[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 37;
+	TREE_LEVEL = 1;
+	PARENT = 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 38;
+	TREE_LEVEL = 0;
+	CHILDREN = 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 39;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 40;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 41;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 42;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 43;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 44;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 45;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 46;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 47;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 48;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 49;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 50;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 51;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 52;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 53;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yINDEX[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 54;
+	TREE_LEVEL = 1;
+	PARENT = 38;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 55;
+	TREE_LEVEL = 0;
+	CHILDREN = 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 56;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 57;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 58;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 59;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 60;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 61;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 62;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 63;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 64;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 65;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 66;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 67;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 68;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 69;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 70;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yMD[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 71;
+	TREE_LEVEL = 1;
+	PARENT = 55;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 72;
+	TREE_LEVEL = 0;
+	CHILDREN = 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 73;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 74;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 75;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 76;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 77;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 78;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 79;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 80;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 81;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 82;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 83;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 84;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 85;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 86;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 87;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yN[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 88;
+	TREE_LEVEL = 1;
+	PARENT = 72;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 89;
+	TREE_LEVEL = 0;
+	CHILDREN = 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 90;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 91;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 92;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 93;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 94;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 95;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 96;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 97;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 98;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 99;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 100;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 101;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 102;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 103;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 104;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yNC[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 105;
+	TREE_LEVEL = 1;
+	PARENT = 89;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 106;
+	TREE_LEVEL = 0;
+	CHILDREN = 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 107;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 108;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 109;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 110;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 111;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 112;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 113;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 114;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 115;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 116;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 117;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 118;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 119;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 120;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 121;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yPC[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 122;
+	TREE_LEVEL = 1;
+	PARENT = 106;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 123;
+	TREE_LEVEL = 0;
+	CHILDREN = 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 124;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 125;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 126;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 127;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 128;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 129;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 130;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 131;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 132;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 133;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 134;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 135;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 136;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 137;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 138;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "yR[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 139;
+	TREE_LEVEL = 1;
+	PARENT = 123;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 140;
+	TREE_LEVEL = 0;
+	CHILDREN = 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 141;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 142;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 143;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 144;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 145;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 146;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 147;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 148;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 149;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 150;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 151;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 152;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 153;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 154;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 155;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ySR[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 156;
+	TREE_LEVEL = 1;
+	PARENT = 140;
+}
+
+TIME_BAR
+{
+	TIME = 0;
+	MASTER = TRUE;
+}
+;
