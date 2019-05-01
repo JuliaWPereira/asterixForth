@@ -3,6 +3,7 @@
 
 Para informações relativas a ideia da arquitetura, por enquanto leia o pdf do repositório
 
+<h2> Arquivos vigentes </h2>
 <div>
 <u1>
   <li> ula.v - arquivo atual da ULA. Operações estritamente combinacionais</li>
@@ -11,9 +12,12 @@ Para informações relativas a ideia da arquitetura, por enquanto leia o pdf do 
 </u1>
 </div> 
 
+<br>
+<br>
 
+<h2> Arquivos antigos </h2>
 <div>
   <u1>
-    <li> ULA.v - obsoleto </li>
+    <li> ULA.v - descontinuado </li>
   </u1>
 </div>
