@@ -10,7 +10,8 @@ Para informações relativas a ideia da arquitetura, por enquanto leia o pdf do 
   <li> shifter.v - arquivo acoplado com a ula.v para dar shift nos resultados da ula. Operaçes estritamente combinacionais</li>
   <li> muxY.v - arquivo do multiplexador de seleção de quem deve ser colocado no barramento do Y no qual a ULA tem acesso. Operações estritamente combinacionais.</li>
   <li> pilhaDeDados.v - arquivo da pilha de dados. Ele utiliza a memória do FPGA. Possui os sinais FLAG para underflow, overflow e empty para exceções. </li>
-  <li> pilhaDeRetorno.v - arquivo da pilha de retorno. A priori, tá igual a pilha de Dados. Pensar em talvez alterar o tamanho. </li>
+  <li> pilhaDeRetorno.v - arquivo da pilha de retorno. A priori, tá igual a pilha de Dados. Pensar em talvez alterar o tamanho.</li>
+  <li> memoriaDePrograma.v - arquivo da memória de programa. Implementei dual-port para me resguardar de já ser possível escrever na memória de programas, apesar de não usar isso nesse projeto. Implementei dual-clock para ter a leitura automática.</li>
 </u1>
 </div> 
 
