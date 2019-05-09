@@ -12,7 +12,7 @@ Para informações relativas a ideia da arquitetura, por enquanto leia o pdf do 
   <li> pilhaDeDados.v - arquivo da pilha de dados. Ele utiliza a memória do FPGA. Possui os sinais FLAG para underflow, overflow e empty para exceções. </li>
   <li> pilhaDeRetorno.v - arquivo da pilha de retorno. A priori, tá igual a pilha de Dados. Pensar em talvez alterar o tamanho.</li>
   <li> memoriaDePrograma.v - arquivo da memória de programa. Implementei dual-port para me resguardar de já ser possível escrever na memória de programas, apesar de não usar isso nesse projeto. Implementei dual-clock para ter a leitura automática.</li>
-  <li> contadorDoPrograma.v - arquivo do contador do programa, ou PC. Já que estamos trabalhando com dual clock, fiz com que o PC dê a saída do endereço sempre no tempo do clock do FPGA (read_clk) e atualizar o clock no tempo da máquina. Deixei encapsulado o controle de <i>branch dentro desse módulo, tratando com if.</li>
+  <li> contadorDoPrograma.v - arquivo do contador do programa, ou PC. Já que estamos trabalhando com dual clock, fiz com que o PC dê a saída do endereço sempre no tempo do clock do FPGA (read_clk) e atualizar o clock no tempo da máquina. Deixei encapsulado o controle de <i>branch</i> dentro desse módulo, tratando com if.</li>
 </u1>
 </div> 
 
