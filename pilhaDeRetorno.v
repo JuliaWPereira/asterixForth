@@ -19,16 +19,16 @@ module pilhaDeRetorno
 	always @ (posedge write_clock)
 	begin
 		if(reset == 1)
-			TOS = 16'b00000000000000000;
+			TOS <= 16'b00000000000000000;
 		// Write
 		else if (we)
 			begin
 				ram[TOS] <= data;
-				TOS = TOS + 16'b00000000000000001;
+				TOS <= TOS + 16'b00000000000000001;
 			end
 		else
 			begin
-				TOS = TOS - 16'b00000000000000001;
+				TOS <= TOS - 16'b00000000000000001;
 			end
 	end
 	
