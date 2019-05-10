@@ -15,7 +15,8 @@ Para informações relativas a ideia da arquitetura, por enquanto leia o pdf do 
   <li> contadorDoPrograma.v - arquivo do contador do programa, ou PC. Já que estamos trabalhando com dual clock, fiz com que o PC dê a saída do endereço sempre no tempo do clock do FPGA (read_clk) e atualizar o clock no tempo da máquina. Deixei encapsulado o controle de <i>branch</i> dentro desse módulo, tratando com if.</li>
   <li> binarioParaBCD.v - arquivo para converter os dados de 16 bits para BCD para posterior saída no <i>display</i> de 7 segmentos. O dado é considerado <i>unsigned</i>. Daí, se resolver que vou tratar números negativos, devo desenvolver um módulo que antecede a conversão e que inverte todos os bits e soma 1 caso seja negativo, obtendo o valor correto.</li>
   <li> BCDpara7segmentos.v - converte individualmente o número BCD para 7 segmentos. </li>
-  <li> debounce.v - debounce para o push button de enter.
+  <li> debounce.v - debounce para o push button de enter. </li>
+  <li> entradaSwitches.v - recebe as entradas dos 16 switches, esperando a confirmação do dado com um "enter" de push button. Fiz com que fosse síncrona, para garantir que lê a entrada a tempo. </li>
 </u1>
 </div> 
 
