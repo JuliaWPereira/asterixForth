@@ -17,6 +17,8 @@ Para informações relativas a ideia da arquitetura, por enquanto leia o pdf do 
   <li> BCDpara7segmentos.v - converte individualmente o número BCD para 7 segmentos. </li>
   <li> debounce.v - debounce para o push button de enter. </li>
   <li> entradaSwitches.v - recebe as entradas dos 16 switches, esperando a confirmação do dado com um "enter" de push button. Fiz com que fosse síncrona, para garantir que lê a entrada a tempo. </li>
+  <li> muxG.v - multiplexador para definir se o dado que está no barramento de E/S é o next (para saída de dados) ou se é o dado que está nos switches (para entrada de dados). </li>
+  <li> muxNEXT.v - multiplexador para definir a origem do dado que ficará no registrador NEXT. Pode decidir entre os resultados de muxTorNEXT, da memória de dados e da memória de programa. </li>
 </u1>
 </div> 
 
