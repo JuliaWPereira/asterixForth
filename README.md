@@ -19,6 +19,7 @@ Para informações relativas a ideia da arquitetura, por enquanto leia o pdf do 
   <li> entradaSwitches.v - recebe as entradas dos 16 switches, esperando a confirmação do dado com um "enter" de push button. Fiz com que fosse síncrona, para garantir que lê a entrada a tempo. </li>
   <li> muxG.v - multiplexador para definir se o dado que está no barramento de E/S é o next (para saída de dados) ou se é o dado que está nos switches (para entrada de dados). </li>
   <li> muxNEXT.v - multiplexador para definir a origem do dado que ficará no registrador NEXT. Pode decidir entre os resultados de muxTorNEXT, da memória de dados e da memória de programa. </li>
+  <li> memoriaDeDados.v - memória para armazenamentos dos dados da arquitetura. Destaque para o fato de a arquitetura é do tipo HARVARD, pois tem memória de Dados separada da Memória de Programa. </li>
 </u1>
 </div> 
 
