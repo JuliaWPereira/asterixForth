@@ -7,15 +7,11 @@ module entradaSwitches
 	output espera
 );
 
-	wire apertouBotao;
-
-	debounce debounce(.botao(enter),.clk_read(clk_read),.clk_out(apertouBotao));
-
 	always @(posedge clk_read)
 	begin
-		if(apertouBotao) imediato <= switches;
+		if(enter) imediato <= switches;
 	end
 	
-	assign espera = ~ apertouBotao;
+	assign espera = ~ enter;
 
 endmodule 
