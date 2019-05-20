@@ -1,7 +1,7 @@
 module debounce
 (
 	input botao,
-	input clk_write,
+	input clk_read, 
 	output clk_out
 );
 
@@ -9,7 +9,7 @@ module debounce
 
 	assign clk_out = Q1 & Q2 & Q3;
 	
-	always @(posedge clk_write)
+	always @(posedge clk_read)
 	begin
 		Q1 <= botao;
 		Q2 <= Q1;
