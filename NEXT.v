@@ -1,4 +1,4 @@
-module TOP
+module NEXT
 #(parameter DATA_WIDTH=16)
 (
 	input [DATA_WIDTH-1:0] newData,
@@ -7,15 +7,15 @@ module TOP
 	output reg [DATA_WIDTH-1:0] data
 );
 	
-	reg [DATA_WIDTH-1:0] TOP;
+	reg [DATA_WIDTH-1:0] NEXT;
 	
 	always @(negedge write_clock)
 		begin
-			TOP <= newData;
+			NEXT <= newData;
 		end 
 	
 	always @(posedge read_clock)
 		begin
-			data <= TOP;
+			data <= NEXT;
 		end 
 endmodule 
