@@ -20,17 +20,41 @@ module asterixForth
 	input sw2,
 	input sw1,
 	input sw0, // switches
+	input reset,
 			
 	output a_dm,b_dm,c_dm,d_dm,e_dm,f_dm,g_dm, // display dezena de milhar
 	output a_um,b_um,c_um,d_um,e_um,f_um,g_um, // display unidade de milhar
 	output a_c,b_c,c_c,d_c,e_c,f_c,g_c, // display centena
 	output a_d,b_d,c_d,d_d,e_d,f_d,g_d, // display dezena
-	output a_u,b_u,c_u,d_u,e_u,f_u,g_u // display unidade
+	output a_u,b_u,c_u,d_u,e_u,f_u,g_u, // display unidade
+	
+	output [DATA_WIDTH-1:0] testeTop,
+	output [ADDR_WIDTH-1:0] testePC,
+	output testeClkWrite,
+	output testeReset,
+	output testeES,
+	output [DATA_WIDTH-1:0] testeInstruca,
+	output wire outClock,
+	output wire [(ADDR_WIDTH-1):0] _PC,
+	output [DATA_WIDTH-1:0] testeNEXT,
+	output [4:0] testefunct
 );
 
+	assign testeTop = reg_TOP;
+	assign testePC = read_addr;
+	assign testeClkWrite = write_clock;
+	//assign testeReset = reset;
+	assign testeES = haltES;
+	assign testeInstrucao = instrucao;
+	assign testeNEXT = reg_NEXT;
+	assign testefunct = funct;
+	
 	/* Sinais de controle */
 	wire branch; // usado no contadorDoPrograma
 	wire haltES; // usado no contadorDoPrograma para segura-lo ate ter entrada
+	wire haltES1;
+	wire haltES2;
+	wire haltProc;
 	wire we_memProg; // Escrita/Leitura da memoria de programa
 	wire [4:0] funct; // usado na selecao da funcao da ULA
 	wire [1:0] shiftCtrl; // usado na ULA para definir o deslocamento
@@ -57,11 +81,12 @@ module asterixForth
 	wire [DATA_WIDTH-1:0] entrada_switches;
 	assign entrada_switches = {sw15,sw14,sw13,sw12,sw11,sw10,sw9,sw8,
 										sw7,sw6,sw5,sw4,sw3,sw2,sw1,sw0};
+	assign haltES = (haltES1 & haltES2) | haltProc;
 	
 	/* Variaveis */
 	wire write_clock;
 	wire enter;
-	wire reset;
+	//wire reset;
 	wire [ADDR_WIDTH-1:0] read_addr;
 	wire [DATA_WIDTH-1:0] instrucao;
 	wire [10:0] offset;
@@ -90,9 +115,8 @@ module asterixForth
 	wire [DATA_WIDTH-1:0] imediatoORinst; // resultado do MUX entre instrucao e imediato
 	wire seletorMUXimeORist; // seletor do MUX entre instrucao e imediato
 	
-	
 	/* Modulo da Unidade de controle */
-	unidadeDeControle UDC(instrucao,branch,haltES,we_memProg,funct,shiftCtrl,
+	unidadeDeControle UDC(instrucao,branch,haltES2,haltProc,we_memProg,funct,shiftCtrl,
 								 seletorMuxTorNEXT,seletorNEXT,we_pilhaDados,seletorMuxG,
 								 seletorES,seletorINDEX,ehPilhaAtiva,we_pilhaRetorno,seletorY);
 	
@@ -101,7 +125,7 @@ module asterixForth
 	
 	/* Modulos de debounce dos botoes enter e reset*/
 	debounce debounceEntrada(pushButtonEntrada,read_clock,enter);
-	debounce debounceReset(pushButtonReset,read_clock,reset);
+	//debounce debounceReset(pushButtonReset,read_clock,reset);
 	
 	/* Modulo para a extracao do offset da instrucao */
 	extratorBranch extratorB(instrucao,offset);
@@ -110,13 +134,13 @@ module asterixForth
 	extratorImediato extratorI(instrucao,imediato);
 	
 	/* Modulo de multiplexacao entre imediato e instrucao */
-	muxInstORIme muxIorI(instrucao,imediato,seletorMUXimeORist,imediatoORinst );
+	muxInstORIme muxIorI(instrucao,imediato,seletorMUXimeORist,imediatoORinst);
 	
 	/* Modulo do Contador do Programa */
-	contadorDoPrograma PC(write_clock,read_clock,branch,offset,reset,haltES,read_addr);
+	contadorDoPrograma PC(write_clock,read_clock,branch,isReturn, Tbus,offset,reset,haltES,read_addr, _PC);
 	
 	/* Modulo da Memoria de Programa */
-	memoriaDePrograma memPrograma(dataMemProg,read_addr,write_addr,we_memProg,read_clock,
+	memoriaDePrograma memPrograma(dataMemProg,read_addr[4:0],write_addr,we_memProg,read_clock,
 											write_clock,instrucao);
 	
 	/* Modulo do registrador de topo da pilha */
@@ -152,7 +176,7 @@ module asterixForth
 											read_clock,reg_ENTRADA);
 											
 	/* Modulo de entrada de dados dos switches */
-	entradaSwitches switches(entrada_switches,enter,read_clock,imediatoE,haltES);
+	entradaSwitches switches(entrada_switches,enter,read_clock,imediatoE,haltES1);
 											
 	/* Modulo do registrador de saida */
 	registradorSaida regSaida(G,atualizaSaida,write_clock,read_clock,reg_SAIDA);

@@ -9,7 +9,7 @@ module TOP
 	
 	reg [DATA_WIDTH-1:0] TOP;
 	
-	always @(negedge write_clock)
+	always @(posedge write_clock)
 		begin
 			TOP <= newData;
 		end 
