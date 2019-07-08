@@ -1,7 +1,8 @@
 <h1> AsterixForth</h1>
 <h2>Arquitetura Stack desenvolvida por Júlia Wotzasek Pereira </h2>
 
-Para informações relativas a ideia da arquitetura, por enquanto leia o pdf do repositório
+Para informações relativas a ideia da arquitetura, por enquanto leia o pdf do repositório.
+Para ver a arquitetura em funcionamento no <i>kit</i>, acesse <a>https://youtu.be/PGXJ5HhSG60</a>
 
 <h2> Arquivos vigentes </h2>
 <div>
