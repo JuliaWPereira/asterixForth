@@ -1,8 +1,8 @@
 module ula
 #(
-	parameter 			DATA_WIDTH = 16,
-	parameter 			FUNCT_WIDTH= 5,
-	parameter [4:0] 	BYPASST    = 5'b00000,
+	parameter 		DATA_WIDTH = 16,
+	parameter 		FUNCT_WIDTH= 5,
+	parameter [4:0] BYPASST    = 5'b00000,
 	parameter [4:0]	AND 	     = 5'b00100,
 	parameter [4:0]	SUB        = 5'b01000,
 	parameter [4:0]	OR         = 5'b01100,

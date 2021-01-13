@@ -23,13 +23,3 @@ Para ver a arquitetura em funcionamento no <i>kit</i>, acesse <a>https://youtu.b
   <li> memoriaDeDados.v - memória para armazenamentos dos dados da arquitetura. Destaque para o fato de a arquitetura é do tipo HARVARD, pois tem memória de Dados separada da Memória de Programa. </li>
 </u1>
 </div> 
-
-<br>
-<br>
-
-<h2> Arquivos antigos </h2>
-<div>
-  <u1>
-    <li> ULA.v - descontinuado </li>
-  </u1>
-</div>
