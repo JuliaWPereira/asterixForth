@@ -91,7 +91,7 @@ module asterixForth
 	wire [DATA_WIDTH-1:0] instrucao;
 	wire [10:0] offset;
 	wire [DATA_WIDTH-1:0] dataMemProg; // variavel nao sera utilizada ainda
-	wire [ADDR_WIDTH-1:0] write_addr; // tambem nao eh utilizado ainda, posi nao escrevemos na memoria de programa nesse lab
+	wire [ADDR_WIDTH-1:0] write_addr; // tambem nao eh utilizado ainda, pois nao escrevemos na memoria de programa nesse lab
 	wire [DATA_WIDTH-1:0] reg_TOP; // registrador que armazena o topo da pilha
 	wire [DATA_WIDTH-1:0] ULA_result; // resultado da ULA
 	wire [DATA_WIDTH-1:0] Y; // resultado do barramento Y
